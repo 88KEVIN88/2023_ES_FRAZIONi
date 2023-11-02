@@ -172,16 +172,33 @@ namespace WindowsFormsApp2
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int numeratore1 = int.Parse(textBoxNumeratore1.Text);
-            int denominatore1 = int.Parse(textBoxDenominatore1.Text);
-            int numeratore2 = int.Parse(textBoxNumeratore2.Text);
-            int denominatore2 = int.Parse(textBoxDenominatore2.Text);
-            int esponente = int.Parse(textBox2.Text);
+            try
+            {
+                int numeratore1 = int.Parse(textBoxNumeratore1.Text);
+                int denominatore1 = int.Parse(textBoxDenominatore1.Text);
+                int numeratore2 = int.Parse(textBoxNumeratore2.Text);
+                int denominatore2 = int.Parse(textBoxDenominatore2.Text);
 
-            Frazione frazione1 = new Frazione(numeratore1, denominatore1);
-            Frazione frazione2 = new Frazione(numeratore2, denominatore2);
-            MessageBox.Show(frazione1.Potenza(esponente).ToString());
-            
+                Frazione frazione1 = new Frazione(numeratore1, denominatore1);
+                Frazione frazione2 = new Frazione(numeratore2, denominatore2);
+
+                string operazione = textBox1.Text;
+
+                Frazione risultato = null;
+
+                risultato = frazione1.Potenza(int.Parse(textBox2.Text));
+
+                if (risultato != null)
+                {
+                    risultato.Semplifica();
+                    MessageBox.Show($"{risultato.Numeratore}/{risultato.Denominatore}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore: " + ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

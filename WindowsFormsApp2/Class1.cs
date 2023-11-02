@@ -74,24 +74,24 @@ namespace CalcolatriceFrazioni
             {
                 return new Frazione(1, 1); // Qualsiasi frazione elevata a 0 è 1.
             }
-            else
+            else if (esponente > 0)
             {
-                int nuovoNumeratore = (int)Math.Pow(Numeratore, Math.Abs(esponente));
-                int nuovoDenominatore = (int)Math.Pow(Denominatore, Math.Abs(esponente));
-
-                if (esponente < 0)
-                {
-                    int temp = nuovoNumeratore;
-                    nuovoNumeratore = nuovoDenominatore;
-                    nuovoDenominatore = temp;
-                }
-
+                int nuovoNumeratore = (int)Math.Pow(Numeratore, esponente);
+                int nuovoDenominatore = (int)Math.Pow(Denominatore, esponente);
                 Frazione risultato = new Frazione(nuovoNumeratore, nuovoDenominatore);
                 risultato.Semplifica();
-               
+                return risultato;
+            }
+            else // esponente negativo
+            {
+                int nuovoNumeratore = (int)Math.Pow(Denominatore, -esponente);
+                int nuovoDenominatore = (int)Math.Pow(Numeratore, -esponente);
+                Frazione risultato = new Frazione(nuovoNumeratore, nuovoDenominatore);
+                risultato.Semplifica();
                 return risultato;
             }
         }
+
 
 
 
