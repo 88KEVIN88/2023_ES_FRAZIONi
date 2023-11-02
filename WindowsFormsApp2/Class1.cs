@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace CalcolatriceFrazioni
 {
@@ -46,6 +47,11 @@ namespace CalcolatriceFrazioni
             risultato.Semplifica();
             return risultato;
         }
+        public double Valore()
+        {
+            double valore = (double)Numeratore / Denominatore;
+            return valore;
+        }
 
         public Frazione Dividi(Frazione altraFrazione)
         {
@@ -62,6 +68,32 @@ namespace CalcolatriceFrazioni
                 throw new InvalidOperationException("Impossibile dividere per zero.");
             }
         }
+        public Frazione Potenza(int esponente)
+        {
+            if (esponente == 0)
+            {
+                return new Frazione(1, 1); // Qualsiasi frazione elevata a 0 è 1.
+            }
+            else if (esponente > 0)
+            {
+                int nuovoNumeratore = (int)Math.Pow(Numeratore, esponente);
+                int nuovoDenominatore = (int)Math.Pow(Denominatore, esponente);
+                Frazione risultato = new Frazione(nuovoNumeratore, nuovoDenominatore);
+              
+                return risultato;
+            }
+            else // esponente negativo
+            {
+                // Per calcolare una frazione elevata a un esponente negativo, inverti la frazione e poi eleva.
+                int nuovoNumeratore = (int)Math.Pow(Denominatore, -esponente);
+                int nuovoDenominatore = (int)Math.Pow(Numeratore, -esponente);
+                Frazione risultato = new Frazione(nuovoNumeratore, nuovoDenominatore);
+              
+                return risultato;
+            }
+        }
+
+
 
         private int TrovaMCD(int a, int b)
         {
@@ -75,6 +107,7 @@ namespace CalcolatriceFrazioni
             }
             return a;
         }
+        
     }
 }
 
