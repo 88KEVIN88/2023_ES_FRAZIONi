@@ -176,10 +176,11 @@ namespace WindowsFormsApp2
             int denominatore1 = int.Parse(textBoxDenominatore1.Text);
             int numeratore2 = int.Parse(textBoxNumeratore2.Text);
             int denominatore2 = int.Parse(textBoxDenominatore2.Text);
+            int esponente = int.Parse(textBox2.Text);
 
             Frazione frazione1 = new Frazione(numeratore1, denominatore1);
-            
-            MessageBox.Show(frazione1.Potenza(int.Parse(textBox2.Text)).ToString());
+            Frazione frazione2 = new Frazione(numeratore2, denominatore2);
+            MessageBox.Show(frazione1.Potenza(esponente).ToString());
             
         }
     }

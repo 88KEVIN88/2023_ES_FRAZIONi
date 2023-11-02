@@ -33,7 +33,6 @@
             this.textBoxNumeratore2 = new System.Windows.Forms.TextBox();
             this.textBoxDenominatore2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.CalcolaButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -83,16 +82,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
-            // 
-            // CalcolaButton
-            // 
-            this.CalcolaButton.Location = new System.Drawing.Point(12, 179);
-            this.CalcolaButton.Name = "CalcolaButton";
-            this.CalcolaButton.Size = new System.Drawing.Size(75, 23);
-            this.CalcolaButton.TabIndex = 6;
-            this.CalcolaButton.Text = "Calcolo";
-            this.CalcolaButton.UseVisualStyleBackColor = true;
-            this.CalcolaButton.Click += new System.EventHandler(this.CalcolaButton_Click_1);
             // 
             // label1
             // 
@@ -233,7 +222,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CalcolaButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBoxDenominatore2);
             this.Controls.Add(this.textBoxNumeratore2);
@@ -254,7 +242,6 @@
         private System.Windows.Forms.TextBox textBoxNumeratore2;
         private System.Windows.Forms.TextBox textBoxDenominatore2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button CalcolaButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

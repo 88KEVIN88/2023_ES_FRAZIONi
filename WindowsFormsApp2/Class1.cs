@@ -79,7 +79,7 @@ namespace CalcolatriceFrazioni
                 int nuovoNumeratore = (int)Math.Pow(Numeratore, esponente);
                 int nuovoDenominatore = (int)Math.Pow(Denominatore, esponente);
                 Frazione risultato = new Frazione(nuovoNumeratore, nuovoDenominatore);
-              
+                risultato.Semplifica();
                 return risultato;
             }
             else // esponente negativo
@@ -88,7 +88,7 @@ namespace CalcolatriceFrazioni
                 int nuovoNumeratore = (int)Math.Pow(Denominatore, -esponente);
                 int nuovoDenominatore = (int)Math.Pow(Numeratore, -esponente);
                 Frazione risultato = new Frazione(nuovoNumeratore, nuovoDenominatore);
-              
+                risultato.Semplifica();
                 return risultato;
             }
         }
